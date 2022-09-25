@@ -5,8 +5,7 @@ import styles from "./FormAddContact.module.css";
 class FormAddContact extends Component {
     state = {
         name: '',
-        number: '',
-        invalidForm: false
+        number: ''
     }
     
     nameId = nanoid();
@@ -16,7 +15,6 @@ class FormAddContact extends Component {
         const { name, value } = e.target;
         this.setState({
             [name]: value,
-            invalidForm: false,
         })
     }
 
@@ -33,7 +31,6 @@ class FormAddContact extends Component {
     
     render() {
         const { nameId, numberId, handleSubmit, handleChange } = this;
-        const { invalidForm } = this.state;
         return (
             <form onSubmit={handleSubmit}>
                 <div className={styles.formGroup}>
